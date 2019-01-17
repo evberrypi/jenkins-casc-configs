@@ -1,0 +1,31 @@
+jobs:
+  - script: >
+      job("terraform-job") {
+         description()
+         keepDependencies(false)
+         disabled(false)
+         concurrentBuild(false)
+         wrappers {
+            terraformBuildWrapper {
+               variables("") 
+               terraformInstallation("terraform")
+               doGetUpdate(true)
+               doNotApply(false)
+               doDestroy(false)
+               config {
+                  value("inline")
+                  inlineConfig("")
+                  fileConfig("")
+               }
+            }
+         }
+      }
+  - script: >
+      multibranchPipelineJob('dsl-seed-job') {
+         branchSources {
+            git {
+               id = 'dsl-seed-job'
+               remote('git@github.com:tuxtek/jenkins-jobs.git')
+            }
+         }
+      }

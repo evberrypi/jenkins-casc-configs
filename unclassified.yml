@@ -1,0 +1,4 @@
+unclassified:
+  slackNotifier:
+    teamDomain: talos-software
+    tokenCredentialId: slack-token

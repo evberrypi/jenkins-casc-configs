@@ -1,0 +1,20 @@
+tool:
+  terraforminstallation:
+    installations:
+      - name: terraform
+        home: ""
+        properties:
+          - installSource:
+              installers:
+                - terraformInstaller:
+                    id: '0.11.11-linux-amd64'
+  git:
+    installations:
+    - home: "git"
+      name: "Default"
+  nodejs:
+    defaultProperties:
+    - installSource:
+        installers:
+        - nodeJSInstaller:
+            npmPackagesRefreshHours: 72
