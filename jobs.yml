@@ -29,3 +29,12 @@ jobs:
             }
          }
       }
+  - script: >
+      multibranchPipelineJob('django-cms') {
+         branchSources {
+            git {
+               id = 'django-cms'
+               remote('git@github.com:tuxtek/django-cms.git')
+            }
+         }
+      }
