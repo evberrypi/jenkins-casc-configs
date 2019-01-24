@@ -2,3 +2,7 @@ unclassified:
   slackNotifier:
     teamDomain: talos-software
     tokenCredentialId: slack-token
+  gitHubPluginConfig:
+    configs:
+    - credentialsId: "github-credentials"
+      name: "GitHub"

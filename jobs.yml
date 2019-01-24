@@ -21,20 +21,16 @@ jobs:
          }
       }
   - script: >
-      multibranchPipelineJob('dsl-seed-job') {
-         branchSources {
-            git {
-               id = 'dsl-seed-job'
-               remote('git@github.com:tuxtek/jenkins-jobs.git')
-            }
-         }
-      }
-  - script: >
       multibranchPipelineJob('django-cms') {
          branchSources {
             git {
-               id = 'django-cms'
+               credentialsId('jenkins_private_key')
                remote('git@github.com:tuxtek/django-cms.git')
+            }
+         }
+         orphanedItemStrategy {
+            discardOldItems {
+               numToKeep(20)
             }
          }
       }
