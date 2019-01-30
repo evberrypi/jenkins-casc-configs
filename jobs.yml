@@ -24,7 +24,7 @@ jobs:
       multibranchPipelineJob('django-cms') {
          branchSources {
             git {
-               credentialsId('jenkins_private_key')
+               credentialsId('github-key')
                remote('git@github.com:tuxtek/django-cms.git')
             }
          }
