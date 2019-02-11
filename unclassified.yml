@@ -4,5 +4,14 @@ unclassified:
     tokenCredentialId: slack-token
   gitHubPluginConfig:
     configs:
-    - credentialsId: "github-credentials"
-      name: "GitHub"
+    - name: "GitHub"
+      credentialsId: "github-credentials"
+      apiUrl: "https://api.github.com"
+      manageHooks: true
+  gitscm:
+    globalConfigName: jenkins
+    globalConfigEmail: jenkins@domain.local
+    createAccountBasedOnEmail: true
+  location:
+    adminAddress: "slopresto@malwarebytes.com"
+    url: "http://jenkins.local/"
