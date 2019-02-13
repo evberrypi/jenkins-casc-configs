@@ -1,6 +1,6 @@
 unclassified:
   slackNotifier:
-    teamDomain: talos-software
+    teamDomain: ${SLACK_WORKSPACE}
     tokenCredentialId: slack-token
   gitHubPluginConfig:
     configs:
@@ -13,5 +13,14 @@ unclassified:
     globalConfigEmail: jenkins@domain.local
     createAccountBasedOnEmail: true
   location:
-    adminAddress: "slopresto@malwarebytes.com"
-    url: "http://jenkins.local/"
+    adminAddress: "${EMAIL_NOTIFICATIONS}"
+    url: "${JENKINS_URL}"
+  globalLibraries:
+    libraries:
+      - name: 'internal-pipeline-library'
+        retriever:
+          modernSCM:
+            scm:
+              git:
+                remote: "${SHARED_LIBRARY_URL}"
+                credentialsId: 'github-key'

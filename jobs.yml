@@ -1,5 +1,5 @@
 jobs:
-  - script: >
+  - script: |-
       job("terraform-job") {
          description()
          keepDependencies(false)
@@ -20,7 +20,7 @@ jobs:
             }
          }
       }
-  - script: >
+  - script: |-
       multibranchPipelineJob('django-cms') {
          branchSources {
             git {
